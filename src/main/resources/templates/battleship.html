@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>IntentHQ - Battleship</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <h1>Battleship Exercise</h1>
+  <p>
+    We are going to play a special version of the very well known game <a href="https://en.wikipedia.org/wiki/Battleship_(game)" target="blank">Battleship</a>. The purpose of the game is to sink all of your opponent’s ships before your opponent sinks yours.
+  </p>
+  <p>
+    In this special version of the game, there will be only one board and the game will be played automatically after a sequence of commands is interpreted. Furthermore, unlike in the original game, here the ships can move between one turn and the other.
+  </p>
+
+  <h2>Considerations</h2>
+  <ul>
+    <li>
+      The board of the game will be rectangular.
+    </li>
+    <li>
+      For simplicity the ships will occupy only one square.
+    </li>
+    <li>
+      Each ship position and location is represented by a combination of 'x' and 'y' coordinates and a letter representing one of the four cardinal compass points.
+    </li>
+    <li>
+      An example position might be 0, 0, N, which means the ship is in the bottom left corner and facing North.
+    </li>
+    <li>
+      In order to move a ship, a simple string of letters will be sent. The possible letters are 'L', 'R' and 'M'. 'L' and 'R' make the ship spin 90 degrees left or right respectively, without moving from its current spot. 'M' means move forward one grid point, and maintain the same heading.
+    </li>
+    <li>
+      To try to sink a ship (that is, to shoot at  a square of the board) the coordinates of the square will be sent.
+    </li>
+    <li>
+      A square can’t be occupied by more than one ship but a during a movement a ship can navigate through a square occupied by a ship.
+    </li>
+  </ul>
+
+  <h2>Input</h2>
+  <ul>
+    <li>
+      The first line of the input is the upper-right coordinates of the board, the lower-left coordinates are assumed to be <code>0, 0</code>. The format of the input will be <code>(X, Y)</code>. This sets the size of the board.
+    </li>
+    <li>
+      The second line of the input is information about the initial deployment of the ships. It will be a space separated list of positions and orientations: <code>(X1, Y1, O1) (X2, Y2, O2) … (XN, YN, ON)</code>
+    </li>
+    <li>
+      The rest of the input will contain different lines which will contain either ship movements or shots:
+    </li>
+    <li>
+      Ship movement. The format will be the position of the ship followed by the list of movements: <code>(X, Y) LLRRLRM</code>
+    </li>
+    <li>
+      Shot. The format will be the position shot: <code>(X, Y)</code>
+    </li>
+  </ul>
+
+  <h2>Output</h2>
+  <p>
+    The output for each ship should be its final coordinates and heading and if they are sink or not.
+  </p>
+
+  <h2>Example test case</h2>
+  <p>
+    Test Input:
+  </p>
+  <pre>
+    (5, 5)
+    (1, 2, N) (3, 3, E)
+    (1, 2) LMLMLMLMM
+    (2, 3)
+    (3, 3) MRMMRMRRM
+    (1, 3)
+  </pre>
+  <p>
+    Expected Output:
+  </p>
+  <pre>
+    (1, 3, N) SUNK
+    (4, 1, E)
+  </pre>
+
+  <h2>What you need to submit</h2>
+  <ul>
+    <li>
+      Source code
+    </li>
+    <li>
+      Unit tests that cover most all of the functionality
+    </li>
+    <li>
+      Validation against input data
+    </li>
+    <li>
+      Demonstrated error handling
+    </li>
+    <li>
+      Comments as deemed necessary
+    </li>
+    <li>
+      Documentation (as necessary)
+    </li>
+    <li>
+      Any assumptions that you have made
+    </li>
+  </ul>
+  <h3>Optionally, you can also include:</h3>
+  <ul>
+    <li>
+      Brief explanation of your solution (such as design considerations)
+    </li>
+    <li>
+      Github url of the repo where you have the exercise
+    </li>
+    <li>
+      Class diagrams
+    </li>
+  </ul>
+</body>
+</html>
